@@ -1,0 +1,42 @@
+project(aaki)
+
+cmake_minimum_required(VERSION 2.8)
+set(CMAKE_BUILD_TYPE "Debug")
+set(CMAKE_CXX_FLAGS "-g -Wall")
+
+FUNCTION(fn_find_root)
+	STRING(REPLACE "/" ";" temp_list1 ${CMAKE_CURRENT_SOURCE_DIR})
+	SET(temp_list2 ${temp_list1})
+	SET(root_config aaki-config/cmake/aaki-root.cmake)
+
+	foreach(temp1 ${temp_list1})
+		unset(search_dir)
+		foreach(temp2 ${temp_list2})
+			set(search_dir ${search_dir}/${temp2})
+		endforeach(temp2)
+		if(EXISTS ${search_dir}/${root_config})
+			set(ENV{AAKI_CFG.ROOT} ${search_dir} PARENT_SCOPE)
+			include($ENV{AAKI_CFG.ROOT}/${root_config} OPTIONAL)
+			break()
+		else()
+			list(REMOVE_AT temp_list2 -1)
+		endif()
+	endforeach(temp1)
+	return()
+ENDFUNCTION(fn_find_root)
+
+set(AAKI_CFG $ENV{AAKI_CFG})
+if(NOT AAKI_CFG)
+	fn_find_root()
+	set(AAKI_CFG $ENV{AAKI_CFG})
+	if(NOT AAKI_CFG)
+		message("AAKI_CFG : None!! --> " ${AAKI_CFG})
+		return()
+	endif(NOT AAKI_CFG)
+endif(NOT AAKI_CFG)
+
+
+#add_subdirectory (test)
+
+aux_source_directory(. SRC_LIST)
+add_executable(${PROJECT_NAME} ${SRC_LIST})
