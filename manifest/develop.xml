@@ -22,4 +22,8 @@
     <project name="aaki-modem"
              path="aaki-modem"
              remote="origin" />
+
+    <project name="aaki-test"
+             path="aaki-test"
+             remote="origin" />
 </manifest>

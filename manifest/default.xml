@@ -3,13 +3,9 @@
     <remote  name="origin"
              fetch="ssh://git@github.com/aaronkim/" />
 
-    <default revision="develop"
+    <default revision="main"
              remote="origin"
              sync-j="4" />
-
-    <project name="aaki"
-             path="aaki"
-             remote="origin" />
 
     <project name="aaki-config"
              path="aaki-config"
