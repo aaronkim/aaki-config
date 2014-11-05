@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
     <remote  name="origin"
-             fetch="ssh://git@github.com/OBIGOGIT/" />
+             fetch="ssh://git@github.com/aaronkim/" />
 
     <default revision="develop"
              remote="origin"
              sync-j="4" />
 
-    <project name="appconnector-sdk"
-             path="appconnector-sdk"
+    <project name="aaki"
+             path="aaki"
              remote="origin" />
 
-    <project name="appconnector-hu"
-             path="appconnector-hu"
+    <project name="aaki-config"
+             path="aaki-config"
              remote="origin" />
 
-    <project name="appconnector-mobile"
-             path="appconnector-mobile"
+    <project name="aaki-framework"
+             path="aaki-framework"
              remote="origin" />
 
-    <project name="appconnector-suite-build"
-             path="appconnector-suite-build"
+    <project name="aaki-modem"
+             path="aaki-modem"
              remote="origin" />
 </manifest>
