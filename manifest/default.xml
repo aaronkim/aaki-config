@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote  name="origin"
+             fetch="ssh://git@github.com/OBIGOGIT/" />
+
+    <default revision="develop"
+             remote="origin"
+             sync-j="4" />
+
+    <project name="appconnector-sdk"
+             path="appconnector-sdk"
+             remote="origin" />
+
+    <project name="appconnector-hu"
+             path="appconnector-hu"
+             remote="origin" />
+
+    <project name="appconnector-mobile"
+             path="appconnector-mobile"
+             remote="origin" />
+
+    <project name="appconnector-suite-build"
+             path="appconnector-suite-build"
+             remote="origin" />
+</manifest>
