@@ -35,8 +35,5 @@ if(NOT AAKI_CFG)
 	endif(NOT AAKI_CFG)
 endif(NOT AAKI_CFG)
 
-
-#add_subdirectory (test)
-
 aux_source_directory(. SRC_LIST)
 add_executable(${PROJECT_NAME} ${SRC_LIST})
